@@ -74,8 +74,6 @@
 		{"id":"f8d925845a31a068","type":"text","text":"","x":2675,"y":60,"width":50,"height":50,"color":"#e178e1"},
 		{"id":"90378a3b80e89651","type":"text","text":"","x":2675,"y":2420,"width":50,"height":50,"color":"#32a5ff"},
 		{"id":"73328bfb247eceea","type":"file","file":"ATTACKS/GOT CREDENTIALS.canvas","x":2240,"y":1561,"width":920,"height":600,"color":"4"},
-		{"id":"3473c0b186c2bfe0","type":"text","text":"","x":2440,"y":1830,"width":50,"height":50,"color":"3"},
-		{"id":"33a23b00d774182f","type":"text","text":"","x":2675,"y":1830,"width":50,"height":50,"color":"#7806a0"},
 		{"id":"20e803900e01a3e8","type":"text","text":"","x":4840,"y":1240,"width":50,"height":50,"color":"1"},
 		{"id":"e79c1f63c92b20a0","type":"text","text":"\n","x":6080,"y":594,"width":50,"height":50,"color":"#96826e"},
 		{"id":"84b0637d9128a84f","type":"file","file":"ATTACKS/DOMAIN ADMIN.canvas","x":5040,"y":419,"width":920,"height":600,"color":"1"},
