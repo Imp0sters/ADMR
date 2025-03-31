@@ -45,7 +45,7 @@ Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, A
 ### 🔹 Organized by context:  
 Each main node represents a **specific situation** during an engagement. For example:  
 - 🔒 NO CREDENTIALS  
-- 👤🔍 GOT USERNAME  
+- 👤 GOT USERNAME  
 - 🔑✅ GOT CREDENTIALS  
 - 💻🌀 GOT SESSION  
 - 🖥️👑 GOT LOCAL ADMIN  
