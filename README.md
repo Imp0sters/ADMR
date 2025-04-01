@@ -21,7 +21,7 @@
 **ADMR** is an **interactive mindmap** designed to support **Active Directory pentesting**.  
 It organizes attacks based on context and follows a clear logic: **input → action → output**.
 
-Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, ADMR is built to be more **readable**, **clickable**, and **practical** for real-world use in red team operations.
+Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, ADMR is built to be more **readable**, **clickable**, and **practical** for real-world use in everyday pentest assessments and red team operations.
 
 ---
 
@@ -35,8 +35,7 @@ Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, A
 ---
 
 ## 🧩 Mindmap Preview  
-![screenshot.png](./screenshot.png)  
-*A full preview or demo link will be added soon.*
+![interactive view](assets/img/image.png)  
 
 ---
 
@@ -44,12 +43,22 @@ Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, A
 
 ### 🔹 Organized by context:  
 Each main node represents a **specific situation** during an engagement. For example:  
-- 🔒 NO CREDENTIALS  
-- 👤 GOT USERNAME  
-- 🔑✅ GOT CREDENTIALS  
-- 💻🌀 GOT SESSION  
-- 🖥️👑 GOT LOCAL ADMIN  
-- 👑🏰 GOT DOMAIN ADMIN  
+- 🔒 **NO CREDENTIALS**  
+- 👤 **GOT USERNAME**  
+- 🔑✅ **GOT CREDENTIALS**  
+- 💻🌀 **GOT LOW ACCESS**  
+- 🖥️👑 **GOT LOCAL ADMIN**  
+- 👑🏰 **GOT DOMAIN ADMIN**  
+- 📜⚠️ **ADCS ABUSE**  
+- 🔓 **CRACKING HASH**  
+- 🎫⚠️ **KERBEROS DELEGATION ABUSE**  
+- 💻↔️💻 **LATERAL MOVE**  
+- 📡🔗 **MITM (LISTEN & RELAY)**  
+- ❓🔑 **NEED CREDENTIALS**  
+- 🛡️⚠️ **PERMISSIONS ABUSE**  
+- 📌 **PERSISTENCE**  
+- 🤝⚠️ **TRUST ABUSE**
+
 
 ### 🔹 Each attack includes:  
 - 📚 **Theory** → Useful links to quality resources  
@@ -60,8 +69,8 @@ Each main node represents a **specific situation** during an engagement. For exa
 ---
 
 ## 💻 How to Use  
-- git clone https://github.com/your-org/admr.git
-- Open the folder in Obsidian
+- git clone https://github.com/Imp0sters/ADMR.git
+- Open the folder as Obsidian vault
 - Explore by context depending on your engagement progress
 - Review theory, commands, and tools
 - Modify or extend with your own findings
@@ -101,14 +110,14 @@ We welcome contributions! You can:
 
 ## 👥 Authors
 
-- **Amine Benbouali** ([@gr0bot](https://github.com/...) – Pentester @Crosscall)  
-- **Evariste Gwanulaga** ([@bl4ckarch](https://github.com/...) – Pentester @Orange Cyberdefense)
+- **Amine Benbouali** ([@gr0bot](https://github.com/gr0bot) – Pentester @Crosscall)  
+- **Evariste Gwanulaga** ([@bl4ckarch](https://github.com/bl4ckarch) – Pentester @Orange Cyberdefense)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.  
+This project is licensed under the **GNU GENERAL PUBLIC LICENSE Version 3**.  
 Feel free to use, modify, and share — just give credit when you do.
 
 ---
@@ -120,4 +129,4 @@ Big thanks to the following for their inspiration and contributions to the field
 - **Orange Cyberdefense** – for the original AD mindmap  
 - **Hacker Recipes** – for structuring practical attack workflows  
 - The **open-source community**  
-- Everyone contributing knowledge and tools that help red teamers thrive  
+- Everyone contributing knowledge and tools that help pentesters and  teamers thrive  
