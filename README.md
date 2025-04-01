@@ -18,10 +18,10 @@
 ---
 
 ## 🧾 Overview  
-**ADMR** is an **interactive mindmap** designed to support **Active Directory pentesting**.  
+**ADMR** is an **interactive mindmap** base on obsidian designed to support **Active Directory pentesting**.  
 It organizes attacks based on context and follows a clear logic: **input → action → output**.
 
-Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, ADMR is built to be more **readable**, **clickable**, and **practical** for real-world use in everyday pentest assessments and red team operations.
+Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, ADMR is built to be more **readable**, **clickable**, and **practical** for real-world use in everyday pentest assessments.
 
 ---
 
