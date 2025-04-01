@@ -1,0 +1,36 @@
+{
+	"nodes":[
+		{"id":"0e46b1302680d73f","type":"group","x":-1200,"y":-480,"width":2040,"height":2480,"color":"2","label":"CRACKING HASH"},
+		{"id":"b3672addac4567f0","type":"group","x":-2400,"y":380,"width":1080,"height":760,"label":"NO CREDENTIALS"},
+		{"id":"5228c1e79dc4f042","type":"group","x":960,"y":380,"width":1080,"height":760,"color":"4","label":"GOT CREDENTIALS"},
+		{"id":"ae79aa96c7644a97","type":"text","text":"# LM\n>[!info] Theory\n>-  https://cryptanalysis.tymyrddin.dev/docs/hashes/lm\n>- Format : `299bd128c1101fd6` \n\n```shell\n⚪ hashcat -a 0 -m 3000 '<hash>' '<wordlist>'\n```","x":-560,"y":-439,"width":700,"height":299},
+		{"id":"1e048ea1416584b9","type":"text","text":"# NT\n>[!info] Theory\n>- https://cryptanalysis.tymyrddin.dev/docs/hashes/nt\n>- Format : `b4b9b02e6f09a9bd760` \n\n\n\n```shell\n⚪ hashcat -a 0 -m 1000 '<hash>' '<wordlist>'\n```","x":-560,"y":-120,"width":700,"height":300},
+		{"id":"6b67fcd0fdeb1c8b","type":"text","text":"# NTLMv2\n>[!info] Theory\n>- https://en.hackndo.com/ntlm-relay/#pr%C3%A9liminaire\n>- Format : `user::N46iSNek...` \n\n\n```shell\n⚪ hashcat -a 0 -m 5600 '<hash>' '<wordlist>'\n```","x":-560,"y":520,"width":700,"height":300},
+		{"id":"37873cd7f870d8bc","type":"text","text":"# Kerberos ASREP\n>[!info] Theory\n>- https://www.thehacker.recipes/ad/movement/kerberos/asreproast\n>- Format : `$krb5asrep$23...` \n\n\n```shell\n⚪ hashcat -a 0 -m 18200 '<hash>' '<wordlist>'\n```","x":-560,"y":840,"width":700,"height":300},
+		{"id":"fff7a4ab3fac4622","type":"text","text":"# Kerberos 5 TGS\n>[!info] Theory\n>- https://www.thehacker.recipes/ad/movement/kerberos/kerberoast\n>- Format RC4 : `$krb5tgs$23$...` \n>- Format AES128 : `$krb5tgs$17...` \n\n\n```shell\n⚪ hashcat -a 0 -m 13100 '<hash>' '<wordlist>'\n```\n\n```shell\n⚪ hashcat -a 0 -m 19600 '<hash>' '<wordlist>'\n```","x":-560,"y":1160,"width":700,"height":380},
+		{"id":"c097cdc0e08a9515","type":"file","file":"INTERACTIVE-MAP.canvas","x":-2320,"y":460,"width":920,"height":600},
+		{"id":"5b1a0122f5bc145b","type":"text","text":"# CRACKING HASH","x":-1120,"y":645,"width":320,"height":50,"color":"2"},
+		{"id":"c9db96fec57cec61","type":"text","text":"# NTLMv1\n>[!info] Theory\n>- https://en.hackndo.com/ntlm-relay/#pr%C3%A9liminaire\n>- Format : `user::85D5BC...` \n\n\n```shell\n⚪ hashcat -a 0 -m 5500 '<hash>' '<wordlist>'\n```","x":-560,"y":200,"width":700,"height":300},
+		{"id":"d8aea49999d8fcc4","type":"text","text":"# MSCache v2\n>[!info] Theory\n>- https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-and-cracking-mscash-cached-domain-credentials\n>- Format : `$DCC2$10240...` \n\n>[!warning] Very slow\n\n```shell\n⚪ hashcat -a 0 -m 2100 '<hash>' '<wordlist>'\n```","x":-560,"y":1560,"width":700,"height":407},
+		{"id":"d340f4f71a48d4e1","type":"file","file":"ATTACKS/GOT CREDENTIALS.canvas","x":1040,"y":460,"width":920,"height":600,"color":"4"},
+		{"id":"88a15e8e24b00128","type":"text","text":"# CREDENTIALS FOUND","x":360,"y":645,"width":380,"height":50,"color":"4"}
+	],
+	"edges":[
+		{"id":"73ae272aa4c769c3","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"1e048ea1416584b9","toSide":"left"},
+		{"id":"c39b4fc6b309c843","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"ae79aa96c7644a97","toSide":"left"},
+		{"id":"bfbc9340f3d9c278","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"c9db96fec57cec61","toSide":"left"},
+		{"id":"9f67e6f3183c7742","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"6b67fcd0fdeb1c8b","toSide":"left"},
+		{"id":"c6708bc2c7a948db","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"37873cd7f870d8bc","toSide":"left"},
+		{"id":"5d95dfefc2372c0d","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"fff7a4ab3fac4622","toSide":"left"},
+		{"id":"fd9eb8576a3e25e8","fromNode":"ae79aa96c7644a97","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"2e001524cf753729","fromNode":"1e048ea1416584b9","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"18f1799de7d3af8f","fromNode":"c9db96fec57cec61","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"20c0a58de207d6b9","fromNode":"6b67fcd0fdeb1c8b","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"5693af5dcad6654f","fromNode":"37873cd7f870d8bc","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"8eb6f3a68906138b","fromNode":"fff7a4ab3fac4622","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"0c3f0ebd80579342","fromNode":"5b1a0122f5bc145b","fromSide":"right","toNode":"d8aea49999d8fcc4","toSide":"left"},
+		{"id":"03dc716fd4be59bc","fromNode":"d8aea49999d8fcc4","fromSide":"right","toNode":"88a15e8e24b00128","toSide":"left"},
+		{"id":"bee550ac11d65224","fromNode":"b3672addac4567f0","fromSide":"right","toNode":"0e46b1302680d73f","toSide":"left"},
+		{"id":"e10d312d2810a20d","fromNode":"0e46b1302680d73f","fromSide":"right","toNode":"d340f4f71a48d4e1","toSide":"left","color":"4"}
+	]
+}

