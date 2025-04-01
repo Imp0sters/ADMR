@@ -1,4 +1,4 @@
-# 🧠 ADMR – Active Directory Mindmap Recipes  
+# ADMR – Active Directory Mindmap Recipes  
 > *Compromise, à la carte.*
 
 ---
@@ -43,33 +43,33 @@ Inspired by existing projects like the **OCD mindmap** and **Hacker Recipes**, A
 
 ### 🔹 Organized by context:  
 Each main node represents a **specific situation** during an engagement. For example:  
-- 🔒 **NO CREDENTIALS**  
+- 🔒 **NO CREDENTIALS VULNS**  
 - 👤 **GOT USERNAME**  
-- 🔑✅ **GOT CREDENTIALS**  
-- 💻🌀 **GOT LOW ACCESS**  
-- 🖥️👑 **GOT LOCAL ADMIN**  
-- 👑🏰 **GOT DOMAIN ADMIN**  
-- 📜⚠️ **ADCS ABUSE**  
+- 🔑 **GOT CREDENTIALS**  
+- 🌀 **GOT LOW ACCESS**  
+- 🖥️ **GOT LOCAL ADMIN**  
+- 🏰 **GOT DOMAIN ADMIN**  
+- 📜 **ADCS ABUSE**  
 - 🔓 **CRACKING HASH**  
-- 🎫⚠️ **KERBEROS DELEGATION ABUSE**  
-- 💻↔️💻 **LATERAL MOVE**  
-- 📡🔗 **MITM (LISTEN & RELAY)**  
-- ❓🔑 **NEED CREDENTIALS**  
-- 🛡️⚠️ **PERMISSIONS ABUSE**  
+- 🎫 **KERBEROS DELEGATION ABUSE**  
+- ↔️ **LATERAL MOVE**  
+- 📡 **MITM (LISTEN & RELAY)**  
+- ❓ **NEED CREDENTIALS VULNS**  
+- 🛡️ **PERMISSIONS ABUSE**  
 - 📌 **PERSISTENCE**  
-- 🤝⚠️ **TRUST ABUSE**
+- 🤝 **TRUST ABUSE**
 
 
 ### 🔹 Each attack includes:  
 - 📚 **Theory** → Useful links to quality resources  
-- 💻 **Command list** → Tested commands ready for use  
 - 🛠 **Tools** → Tools used for exploitation  
+- 💻 **Command list** → Tested commands ready for use  
 - 🔖 **Emoji tags** to assess priority and risk
 
 ---
 
 ## 💻 How to Use  
-- git clone https://github.com/Imp0sters/ADMR.git
+- git clone the repo
 - Open the folder as Obsidian vault
 - Explore by context depending on your engagement progress
 - Review theory, commands, and tools
@@ -88,7 +88,6 @@ Each main node represents a **specific situation** during an engagement. For exa
 - 🔵 PowerShell
 - 🟣 Impacket
 - 🔴 BloodHound
-- 🟡 PowerView
 - 🕷️ NetExec
 - Ⓜ️ Metasploit
 
@@ -110,8 +109,8 @@ We welcome contributions! You can:
 
 ## 👥 Authors
 
-- **Amine Benbouali** ([@gr0bot](https://github.com/gr0bot) – Pentester @Crosscall)  
-- **Evariste Gwanulaga** ([@bl4ckarch](https://github.com/bl4ckarch) – Pentester @Orange Cyberdefense)
+- **Amine B.** ([@gr0bot](https://github.com/gr0bot))  
+- **Evariste Gwanulaga** ([@bl4ckarch](https://github.com/bl4ckarch))
 
 ---
 
@@ -126,7 +125,6 @@ Feel free to use, modify, and share — just give credit when you do.
 
 Big thanks to the following for their inspiration and contributions to the field:
 
-- **Orange Cyberdefense** – for the original AD mindmap  
-- **Hacker Recipes** – for structuring practical attack workflows  
-- The **open-source community**  
-- Everyone contributing knowledge and tools that help pentesters and  teamers thrive  
+- **[Orange Cyberdefense](https://github.com/Orange-Cyberdefense/ocd-mindmaps)** – for the original AD mindmap  
+- **[Hacker Recipes](https://www.thehacker.recipes/)** – for structuring practical attack workflows
+- **[Ecole 2600](https://www.2600.eu/)**
