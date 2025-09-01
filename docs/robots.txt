@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imp0sters.github.io/ADMR/sitemap.xml

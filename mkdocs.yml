@@ -1,0 +1,74 @@
+site_name: ADMR — Active Directory Mindmap Recipes
+site_description: Documentation officielle ADMR — mindmaps, guides et workflows pour pentest Active Directory.
+site_author: Imp0ster
+site_url: https://imp0sters.github.io/ADMR/   # IMPORTANT: project path with /ADMR/
+repo_url: https://github.com/Imp0ster/ADMR
+repo_name: Imp0ster/ADMR
+copyright: © 2025 Imp0ster
+
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: indigo
+  logo: assets/img/logo.png
+  favicon: assets/img/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Imp0ster
+  generator: false
+
+plugins:
+  - search
+  # optional: - sitemap:  (if you install "mkdocs-sitemap")
+  #             changefreq: daily
+  #             priority: 0.9
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+
+extra_css:
+  - styles/extra.css
+
+extra_javascript:
+  - js/extra.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - tables
+
+extra_templates:
+  - overrides/meta.html

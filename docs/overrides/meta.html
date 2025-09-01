@@ -1,0 +1,25 @@
+{# Safe computed vars for project pages under /ADMR/ #}
+{% set _title = (page.title ~ " - " ~ config.site_name) if page and page.title else config.site_name %}
+{% set _desc  = (page.meta.description) if page and page.meta and page.meta.description else config.site_description %}
+{% set _url   = (page.canonical_url) if page and page.canonical_url else config.site_url %}
+{% set _image = config.site_url ~ "assets/img/cover.png" %}
+
+<title>{{ _title }}</title>
+<link rel="canonical" href="{{ _url }}">
+
+<meta name="description" content="{{ _desc }}">
+<meta name="author" content="{{ config.site_author }}">
+
+<meta property="og:title" content="{{ _title }}">
+<meta property="og:description" content="{{ _desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ _url }}">
+<meta property="og:image" content="{{ _image }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ _title }}">
+<meta name="twitter:description" content="{{ _desc }}">
+<meta name="twitter:image" content="{{ _image }}">
+
+<link rel="icon" href="{{ config.site_url }}assets/img/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ config.site_url }}assets/img/apple-touch-icon.png" sizes="180x180">
