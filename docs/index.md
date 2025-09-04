@@ -2,13 +2,13 @@
 
 title: ADMR — Active Directory Mindmap Recipes
 description: Documentation officielle ADMR — mindmaps, guides et workflows opérationnels pour le pentest Active Directory.
---------------------------------------------------------------------------------------------------------------------------
+---
 
 # ADMR — Active Directory Mindmap Recipes
 
 > *Compromise, à la carte.*
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Imp0ster%2FADMR-black?logo=github)](https://github.com/Imp0ster/ADMR) [![Made with MkDocs Material](https://img.shields.io/badge/MkDocs-Material-blue)](https://squidfunk.github.io/mkdocs-material/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-TheImposterz%2FADMR-black?logo=github)](https://github.com/TheImposterz/ADMR) [![Made with MkDocs Material](https://img.shields.io/badge/MkDocs-Material-blue)](https://squidfunk.github.io/mkdocs-material/)
 
 ---
 
@@ -25,7 +25,7 @@ Built from the field, inspired by the **OCD mindmap** and **Hacker Recipes**, AD
 
 ```bash
 # Clone
-git clone https://github.com/Imp0ster/ADMR.git
+git clone https://github.com/TheImposterz/ADMR.git
 cd ADMR
 ```
 
@@ -96,8 +96,8 @@ We welcome PRs and issues:
 * Propose refactors to keep the mindmap practical
 * Use feature branches (`feat/...`) and write clear commit messages (conventional commits please)
 
-**Open a PR:** [https://github.com/Imp0ster/ADMR/pulls](https://github.com/Imp0ster/ADMR/pulls)
-**Open an issue:** [https://github.com/Imp0ster/ADMR/issues](https://github.com/Imp0ster/ADMR/issues)
+**Open a PR:** [https://github.com/TheImposterz/ADMR/pulls](https://github.com/TheImposterz/ADMR/pulls)
+**Open an issue:** [https://github.com/TheImposterz/ADMR/issues](https://github.com/TheImposterz/ADMR/issues)
 
 ---
 
