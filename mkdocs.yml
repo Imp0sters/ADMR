@@ -42,9 +42,9 @@ extra:
 
 plugins:
   - search
-  - sitemap:  # ← AJOUTÉ pour générer automatiquement le sitemap
-      changefreq: daily
-      priority: 0.9
+  #- sitemap:  # ← AJOUTÉ pour générer automatiquement le sitemap
+  #    changefreq: daily
+  #    priority: 0.9
   - minify:
       minify_html: true
   - git-revision-date-localized:
